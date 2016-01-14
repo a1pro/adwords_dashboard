@@ -1,0 +1,213 @@
+[Jan 07 2016 16:33:00.000000 - INFO] POST /api/adwords/mcm/v201509/ManagedCustomerService HTTP/1.1
+Host: adwords.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.5.9-1ubuntu4.14, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 451
+Authorization: Bearer ya29.YgIsO95pPiIKxFq5fYneUuGlfCq8BPXwNoghSZSobHtgdLb8C_4p_qOZOOl2DUgUXOAn
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201509" xmlns:ns2="https://adwords.google.com/api/adwords/mcm/v201509">
+  <SOAP-ENV:Header>
+    <ns2:RequestHeader>
+      <ns1:clientCustomerId>851-164-5832</ns1:clientCustomerId>
+      <ns1:developerToken>8JYRK4bRANhro5btFM_dOA</ns1:developerToken>
+      <ns1:userAgent>eweb (AwApi-PHP/6.6.0, Common-PHP/6.6.0, PHP/5.5.9-1ubuntu4.14)</ns1:userAgent>
+    </ns2:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns2:mutate>
+      <ns2:operations>
+        <ns1:operator>ADD</ns1:operator>
+        <ns2:operand>
+          <ns2:name>Account #568e45e0dc190</ns2:name>
+          <ns2:currencyCode>EUR</ns2:currencyCode>
+          <ns2:dateTimeZone>Europe/London</ns2:dateTimeZone>
+        </ns2:operand>
+      </ns2:operations>
+    </ns2:mutate>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Thu, 07 Jan 2016 11:03:20 GMT
+Expires: Thu, 07 Jan 2016 11:03:20 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 403
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ns2:ResponseHeader xmlns:ns2="https://adwords.google.com/api/adwords/mcm/v201509" xmlns="https://adwords.google.com/api/adwords/cm/v201509">
+      <requestId>000528bc6b1ab7880abcd90a2f00bc15</requestId>
+      <serviceName>ManagedCustomerService</serviceName>
+      <methodName>mutate</methodName>
+      <operations>4</operations>
+      <responseTime>911</responseTime>
+    </ns2:ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <ns2:mutateResponse xmlns="https://adwords.google.com/api/adwords/cm/v201509" xmlns:ns2="https://adwords.google.com/api/adwords/mcm/v201509">
+      <ns2:rval>
+        <ns2:value>
+          <ns2:name>Account #568e45e0dc190</ns2:name>
+          <ns2:customerId>1626687040</ns2:customerId>
+          <ns2:canManageClients>false</ns2:canManageClients>
+          <ns2:currencyCode>EUR</ns2:currencyCode>
+          <ns2:dateTimeZone>Europe/London</ns2:dateTimeZone>
+        </ns2:value>
+      </ns2:rval>
+    </ns2:mutateResponse>
+  </soap:Body>
+</soap:Envelope>
+
+[Jan 07 2016 16:34:44.000000 - INFO] POST /api/adwords/cm/v201509/CampaignService HTTP/1.1
+Host: adwords.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.5.9-1ubuntu4.14, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 401
+Authorization: Bearer ya29.YgIo51iIC-stkhEhW7teBifbGx4tAwpYJhVW1HpDEEVuTPy8sAkSumqnsn4z4bTpUnWY
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201509">
+  <SOAP-ENV:Header>
+    <ns1:RequestHeader>
+      <ns1:clientCustomerId>851-164-5832</ns1:clientCustomerId>
+      <ns1:developerToken>8JYRK4bRANhro5btFM_dOA</ns1:developerToken>
+      <ns1:userAgent>eweb (AwApi-PHP/6.6.0, Common-PHP/6.6.0, PHP/5.5.9-1ubuntu4.14)</ns1:userAgent>
+    </ns1:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:get>
+      <ns1:serviceSelector>
+        <ns1:fields>Id</ns1:fields>
+        <ns1:paging>
+          <ns1:startIndex>0</ns1:startIndex>
+          <ns1:numberResults>500</ns1:numberResults>
+        </ns1:paging>
+      </ns1:serviceSelector>
+    </ns1:get>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Thu, 07 Jan 2016 11:05:04 GMT
+Expires: Thu, 07 Jan 2016 11:05:04 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 301
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201509">
+      <requestId>000528bc715a05680a4c55e6cd0d949c</requestId>
+      <serviceName>CampaignService</serviceName>
+      <methodName>get</methodName>
+      <operations>1</operations>
+      <responseTime>413</responseTime>
+    </ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <getResponse xmlns="https://adwords.google.com/api/adwords/cm/v201509">
+      <rval>
+        <totalNumEntries>0</totalNumEntries>
+        <Page.Type>CampaignPage</Page.Type>
+      </rval>
+    </getResponse>
+  </soap:Body>
+</soap:Envelope>
+
+[Jan 07 2016 16:34:50.000000 - ERROR] POST /api/adwords/ch/v201509/CustomerSyncService HTTP/1.1
+Host: adwords.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.5.9-1ubuntu4.14, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 401
+Authorization: Bearer ya29.YgIo51iIC-stkhEhW7teBifbGx4tAwpYJhVW1HpDEEVuTPy8sAkSumqnsn4z4bTpUnWY
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201509" xmlns:ns2="https://adwords.google.com/api/adwords/ch/v201509">
+  <SOAP-ENV:Header>
+    <ns2:RequestHeader>
+      <ns1:clientCustomerId>851-164-5832</ns1:clientCustomerId>
+      <ns1:developerToken>8JYRK4bRANhro5btFM_dOA</ns1:developerToken>
+      <ns1:userAgent>eweb (AwApi-PHP/6.6.0, Common-PHP/6.6.0, PHP/5.5.9-1ubuntu4.14)</ns1:userAgent>
+    </ns2:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns2:get>
+      <ns2:selector>
+        <ns2:dateTimeRange>
+          <ns1:min>20160106 043444</ns1:min>
+          <ns1:max>20160107 043444</ns1:max>
+        </ns2:dateTimeRange>
+      </ns2:selector>
+    </ns2:get>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Thu, 07 Jan 2016 11:05:10 GMT
+Expires: Thu, 07 Jan 2016 11:05:10 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 501
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ns2:ResponseHeader xmlns:ns2="https://adwords.google.com/api/adwords/ch/v201509" xmlns="https://adwords.google.com/api/adwords/cm/v201509">
+      <requestId>000528bc71b652500abc78865708ec48</requestId>
+      <serviceName>CustomerSyncService</serviceName>
+      <methodName>get</methodName>
+      <operations>1</operations>
+      <responseTime>188</responseTime>
+    </ns2:ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Server</faultcode>
+      <faultstring>[CustomerSyncError.MISSING_IDS @ selector.campaignIds]</faultstring>
+      <detail>
+        <ns2:ApiExceptionFault xmlns="https://adwords.google.com/api/adwords/cm/v201509" xmlns:ns2="https://adwords.google.com/api/adwords/ch/v201509">
+          <message>[CustomerSyncError.MISSING_IDS @ selector.campaignIds]</message>
+          <ApplicationException.Type>ApiException</ApplicationException.Type>
+          <errors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:CustomerSyncError">
+            <fieldPath>selector.campaignIds</fieldPath>
+            <trigger/>
+            <errorString>CustomerSyncError.MISSING_IDS</errorString>
+            <ApiError.Type>CustomerSyncError</ApiError.Type>
+          </errors>
+        </ns2:ApiExceptionFault>
+      </detail>
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+

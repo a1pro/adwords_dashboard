@@ -1,0 +1,999 @@
+[Dec 22 2015 12:32:10.000000 - ERROR] POST /api/adwords/cm/v201506/CampaignService HTTP/1.1
+Host: adwords.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.5.9-1ubuntu4.14, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 448
+Authorization: Bearer ya29.UgKNlV-Bdrj4y3KWCsHBN5aeFfSNtYNDcYVgPCJcsBoB5czxFe_b7ZGXK8KnpY7tB4sa
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201506">
+  <SOAP-ENV:Header>
+    <ns1:RequestHeader>
+      <ns1:clientCustomerId>285-513-2157</ns1:clientCustomerId>
+      <ns1:developerToken>5KKdKH9f6eKV6YcLLYzNtQ</ns1:developerToken>
+      <ns1:userAgent>eweb-aone (AwApi-PHP/6.6.0, Common-PHP/6.6.0, PHP/5.5.9-1ubuntu4.14)</ns1:userAgent>
+    </ns1:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:get>
+      <ns1:serviceSelector>
+        <ns1:fields>Id</ns1:fields>
+        <ns1:fields>Name</ns1:fields>
+        <ns1:ordering>
+          <ns1:field>Name</ns1:field>
+          <ns1:sortOrder>ASCENDING</ns1:sortOrder>
+        </ns1:ordering>
+        <ns1:paging>
+          <ns1:startIndex>0</ns1:startIndex>
+          <ns1:numberResults>500</ns1:numberResults>
+        </ns1:paging>
+      </ns1:serviceSelector>
+    </ns1:get>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Tue, 22 Dec 2015 07:02:19 GMT
+Expires: Tue, 22 Dec 2015 07:02:19 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 519
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+      <requestId>000527772fc023d00a4cb2aacd0664e6</requestId>
+      <serviceName>CampaignService</serviceName>
+      <methodName>get</methodName>
+      <operations>1</operations>
+      <responseTime>189</responseTime>
+    </ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Server</faultcode>
+      <faultstring>[QuotaCheckError.DEVELOPER_TOKEN_NOT_APPROVED @ ; trigger:'&lt;null&gt;']</faultstring>
+      <detail>
+        <ApiExceptionFault xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+          <message>[QuotaCheckError.DEVELOPER_TOKEN_NOT_APPROVED @ ; trigger:'&lt;null&gt;']</message>
+          <ApplicationException.Type>ApiException</ApplicationException.Type>
+          <errors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="QuotaCheckError">
+            <fieldPath/>
+            <trigger>&lt;null&gt;</trigger>
+            <errorString>QuotaCheckError.DEVELOPER_TOKEN_NOT_APPROVED</errorString>
+            <ApiError.Type>QuotaCheckError</ApiError.Type>
+            <reason>DEVELOPER_TOKEN_NOT_APPROVED</reason>
+          </errors>
+        </ApiExceptionFault>
+      </detail>
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+[Dec 22 2015 12:41:02.000000 - ERROR] POST /api/adwords/cm/v201506/CampaignService HTTP/1.1
+Host: adwords.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.5.9-1ubuntu4.14, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 448
+Authorization: Bearer ya29.UgIXFHiEkPlrS_Q51PzsVYb-l9bH8oSVFfPEHSFRR5AfVw8ocUpqdkNmaGNBxMU0APhz
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201506">
+  <SOAP-ENV:Header>
+    <ns1:RequestHeader>
+      <ns1:clientCustomerId>285-513-2157</ns1:clientCustomerId>
+      <ns1:developerToken>5KKdKH9f6eKV6YcLLYzNtQ</ns1:developerToken>
+      <ns1:userAgent>eweb-aone (AwApi-PHP/6.6.0, Common-PHP/6.6.0, PHP/5.5.9-1ubuntu4.14)</ns1:userAgent>
+    </ns1:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:get>
+      <ns1:serviceSelector>
+        <ns1:fields>Id</ns1:fields>
+        <ns1:fields>Name</ns1:fields>
+        <ns1:ordering>
+          <ns1:field>Name</ns1:field>
+          <ns1:sortOrder>ASCENDING</ns1:sortOrder>
+        </ns1:ordering>
+        <ns1:paging>
+          <ns1:startIndex>0</ns1:startIndex>
+          <ns1:numberResults>500</ns1:numberResults>
+        </ns1:paging>
+      </ns1:serviceSelector>
+    </ns1:get>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Tue, 22 Dec 2015 07:11:11 GMT
+Expires: Tue, 22 Dec 2015 07:11:11 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 519
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+      <requestId>000527774f787c690a4c4c843703d027</requestId>
+      <serviceName>CampaignService</serviceName>
+      <methodName>get</methodName>
+      <operations>1</operations>
+      <responseTime>107</responseTime>
+    </ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Server</faultcode>
+      <faultstring>[QuotaCheckError.DEVELOPER_TOKEN_NOT_APPROVED @ ; trigger:'&lt;null&gt;']</faultstring>
+      <detail>
+        <ApiExceptionFault xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+          <message>[QuotaCheckError.DEVELOPER_TOKEN_NOT_APPROVED @ ; trigger:'&lt;null&gt;']</message>
+          <ApplicationException.Type>ApiException</ApplicationException.Type>
+          <errors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="QuotaCheckError">
+            <fieldPath/>
+            <trigger>&lt;null&gt;</trigger>
+            <errorString>QuotaCheckError.DEVELOPER_TOKEN_NOT_APPROVED</errorString>
+            <ApiError.Type>QuotaCheckError</ApiError.Type>
+            <reason>DEVELOPER_TOKEN_NOT_APPROVED</reason>
+          </errors>
+        </ApiExceptionFault>
+      </detail>
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+[Jan 06 2016 16:18:54.000000 - INFO] POST /api/adwords/cm/v201506/CampaignService HTTP/1.1
+Host: adwords.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.5.9-1ubuntu4.14, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 444
+Authorization: Bearer ya29.YQJB4l65pGj9OWYB0ar8wULnzY0QxqnwaQzzLiqKvMb1kRbCuVQNlbk7t9usH69xO9xihg
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201506">
+  <SOAP-ENV:Header>
+    <ns1:RequestHeader>
+      <ns1:clientCustomerId>851-164-5832</ns1:clientCustomerId>
+      <ns1:developerToken>8JYRK4bRANhro5btFM_dOA</ns1:developerToken>
+      <ns1:userAgent>eweb (AwApi-PHP/6.6.0, Common-PHP/6.6.0, PHP/5.5.9-1ubuntu4.14)</ns1:userAgent>
+    </ns1:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:get>
+      <ns1:serviceSelector>
+        <ns1:fields>Id</ns1:fields>
+        <ns1:fields>Name</ns1:fields>
+        <ns1:ordering>
+          <ns1:field>Name</ns1:field>
+          <ns1:sortOrder>ASCENDING</ns1:sortOrder>
+        </ns1:ordering>
+        <ns1:paging>
+          <ns1:startIndex>0</ns1:startIndex>
+          <ns1:numberResults>500</ns1:numberResults>
+        </ns1:paging>
+      </ns1:serviceSelector>
+    </ns1:get>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Wed, 06 Jan 2016 10:49:14 GMT
+Expires: Wed, 06 Jan 2016 10:49:14 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 300
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+      <requestId>000528a81adab1b00a4c9eaad70b9671</requestId>
+      <serviceName>CampaignService</serviceName>
+      <methodName>get</methodName>
+      <operations>1</operations>
+      <responseTime>295</responseTime>
+    </ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <getResponse xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+      <rval>
+        <totalNumEntries>0</totalNumEntries>
+        <Page.Type>CampaignPage</Page.Type>
+      </rval>
+    </getResponse>
+  </soap:Body>
+</soap:Envelope>
+
+[Jan 06 2016 16:42:24.000000 - INFO] POST /api/adwords/cm/v201506/BudgetService HTTP/1.1
+Host: adwords.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.5.9-1ubuntu4.14, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 470
+Authorization: Bearer ya29.YQJmgEBFMatfToQM7tSrF0rPAgX-7IwwSuvVwHOxm28yibhgodwWrqDwAWOIBS_klvosuA
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201506">
+  <SOAP-ENV:Header>
+    <ns1:RequestHeader>
+      <ns1:clientCustomerId>851-164-5832</ns1:clientCustomerId>
+      <ns1:developerToken>8JYRK4bRANhro5btFM_dOA</ns1:developerToken>
+      <ns1:userAgent>eweb (AwApi-PHP/6.6.0, Common-PHP/6.6.0, PHP/5.5.9-1ubuntu4.14)</ns1:userAgent>
+    </ns1:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:mutate>
+      <ns1:operations>
+        <ns1:operator>ADD</ns1:operator>
+        <ns1:operand>
+          <ns1:name>Interplanetary Cruise Budget #568cf694b3381</ns1:name>
+          <ns1:period>DAILY</ns1:period>
+          <ns1:amount>
+            <ns1:microAmount>50000000</ns1:microAmount>
+          </ns1:amount>
+          <ns1:deliveryMethod>STANDARD</ns1:deliveryMethod>
+        </ns1:operand>
+      </ns1:operations>
+    </ns1:mutate>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Wed, 06 Jan 2016 11:12:43 GMT
+Expires: Wed, 06 Jan 2016 11:12:43 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 461
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+      <requestId>000528a86ed67ee80a4cadc5810ad675</requestId>
+      <serviceName>BudgetService</serviceName>
+      <methodName>mutate</methodName>
+      <operations>1</operations>
+      <responseTime>412</responseTime>
+    </ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <mutateResponse xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+      <rval>
+        <ListReturnValue.Type>BudgetReturnValue</ListReturnValue.Type>
+        <value>
+          <budgetId>465843199</budgetId>
+          <name>Interplanetary Cruise Budget #568cf694b3381</name>
+          <period>DAILY</period>
+          <amount>
+            <ComparableValue.Type>Money</ComparableValue.Type>
+            <microAmount>50000000</microAmount>
+          </amount>
+          <deliveryMethod>STANDARD</deliveryMethod>
+          <isExplicitlyShared>true</isExplicitlyShared>
+          <status>ENABLED</status>
+        </value>
+      </rval>
+    </mutateResponse>
+  </soap:Body>
+</soap:Envelope>
+
+[Jan 06 2016 16:42:55.000000 - ERROR] 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201506" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Header>
+    <ns1:RequestHeader>
+      <ns1:clientCustomerId>851-164-5832</ns1:clientCustomerId>
+      <ns1:developerToken>8JYRK4bRANhro5btFM_dOA</ns1:developerToken>
+      <ns1:userAgent>eweb (AwApi-PHP/6.6.0, Common-PHP/6.6.0, PHP/5.5.9-1ubuntu4.14)</ns1:userAgent>
+    </ns1:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:mutate>
+      <ns1:operations>
+        <ns1:operator>ADD</ns1:operator>
+        <ns1:operand>
+          <ns1:name>Interplanetary Cruise #568cf69972ed6</ns1:name>
+          <ns1:status>PAUSED</ns1:status>
+          <ns1:startDate>20160107</ns1:startDate>
+          <ns1:endDate>20160206</ns1:endDate>
+          <ns1:budget>
+            <ns1:budgetId>465843199</ns1:budgetId>
+          </ns1:budget>
+          <ns1:adServingOptimizationStatus>ROTATE</ns1:adServingOptimizationStatus>
+          <ns1:frequencyCap>
+            <ns1:impressions>5</ns1:impressions>
+            <ns1:timeUnit>DAY</ns1:timeUnit>
+            <ns1:level>ADGROUP</ns1:level>
+          </ns1:frequencyCap>
+          <ns1:settings xsi:type="ns1:GeoTargetTypeSetting">
+            <ns1:positiveGeoTargetType>DONT_CARE</ns1:positiveGeoTargetType>
+            <ns1:negativeGeoTargetType>DONT_CARE</ns1:negativeGeoTargetType>
+          </ns1:settings>
+          <ns1:advertisingChannelType>SEARCH</ns1:advertisingChannelType>
+          <ns1:networkSetting>
+            <ns1:targetGoogleSearch>true</ns1:targetGoogleSearch>
+            <ns1:targetSearchNetwork>true</ns1:targetSearchNetwork>
+            <ns1:targetContentNetwork>true</ns1:targetContentNetwork>
+          </ns1:networkSetting>
+          <ns1:biddingStrategyConfiguration>
+            <ns1:biddingStrategyType>MANUAL_CPC</ns1:biddingStrategyType>
+            <ns1:biddingScheme xsi:type="ns1:ManualCpcBiddingScheme">
+              <ns1:enhancedCpcEnabled>false</ns1:enhancedCpcEnabled>
+            </ns1:biddingScheme>
+          </ns1:biddingStrategyConfiguration>
+        </ns1:operand>
+      </ns1:operations>
+      <ns1:operations>
+        <ns1:operator>ADD</ns1:operator>
+        <ns1:operand>
+          <ns1:name>Interplanetary Cruise #568cf69973010</ns1:name>
+          <ns1:status>PAUSED</ns1:status>
+          <ns1:startDate>20160107</ns1:startDate>
+          <ns1:endDate>20160206</ns1:endDate>
+          <ns1:budget>
+            <ns1:budgetId>465843199</ns1:budgetId>
+          </ns1:budget>
+          <ns1:adServingOptimizationStatus>ROTATE</ns1:adServingOptimizationStatus>
+          <ns1:frequencyCap>
+            <ns1:impressions>5</ns1:impressions>
+            <ns1:timeUnit>DAY</ns1:timeUnit>
+            <ns1:level>ADGROUP</ns1:level>
+          </ns1:frequencyCap>
+          <ns1:settings xsi:type="ns1:GeoTargetTypeSetting">
+            <ns1:positiveGeoTargetType>DONT_CARE</ns1:positiveGeoTargetType>
+            <ns1:negativeGeoTargetType>DONT_CARE</ns1:negativeGeoTargetType>
+          </ns1:settings>
+          <ns1:advertisingChannelType>SEARCH</ns1:advertisingChannelType>
+          <ns1:networkSetting>
+            <ns1:targetGoogleSearch>true</ns1:targetGoogleSearch>
+            <ns1:targetSearchNetwork>true</ns1:targetSearchNetwork>
+            <ns1:targetContentNetwork>true</ns1:targetContentNetwork>
+          </ns1:networkSetting>
+          <ns1:biddingStrategyConfiguration>
+            <ns1:biddingStrategyType>MANUAL_CPC</ns1:biddingStrategyType>
+            <ns1:biddingScheme xsi:type="ns1:ManualCpcBiddingScheme">
+              <ns1:enhancedCpcEnabled>false</ns1:enhancedCpcEnabled>
+            </ns1:biddingScheme>
+          </ns1:biddingStrategyConfiguration>
+        </ns1:operand>
+      </ns1:operations>
+    </ns1:mutate>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+
+
+[Jan 06 2016 17:36:06.000000 - INFO] POST /api/adwords/cm/v201506/CampaignService HTTP/1.1
+Host: adwords.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.5.9-1ubuntu4.14, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 444
+Authorization: Bearer ya29.YQK2UXBiHjJGBiWEHbgiuiSSHuMc5Rp58jW6Nyh-vDEx7SULd_uBHgnkTKC_816OV7UjZg
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201506">
+  <SOAP-ENV:Header>
+    <ns1:RequestHeader>
+      <ns1:clientCustomerId>851-164-5832</ns1:clientCustomerId>
+      <ns1:developerToken>8JYRK4bRANhro5btFM_dOA</ns1:developerToken>
+      <ns1:userAgent>eweb (AwApi-PHP/6.6.0, Common-PHP/6.6.0, PHP/5.5.9-1ubuntu4.14)</ns1:userAgent>
+    </ns1:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:get>
+      <ns1:serviceSelector>
+        <ns1:fields>Id</ns1:fields>
+        <ns1:fields>Name</ns1:fields>
+        <ns1:ordering>
+          <ns1:field>Name</ns1:field>
+          <ns1:sortOrder>ASCENDING</ns1:sortOrder>
+        </ns1:ordering>
+        <ns1:paging>
+          <ns1:startIndex>0</ns1:startIndex>
+          <ns1:numberResults>500</ns1:numberResults>
+        </ns1:paging>
+      </ns1:serviceSelector>
+    </ns1:get>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Wed, 06 Jan 2016 12:06:25 GMT
+Expires: Wed, 06 Jan 2016 12:06:25 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 300
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+      <requestId>000528a92eecc8180a4ca98413024692</requestId>
+      <serviceName>CampaignService</serviceName>
+      <methodName>get</methodName>
+      <operations>1</operations>
+      <responseTime>234</responseTime>
+    </ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <getResponse xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+      <rval>
+        <totalNumEntries>0</totalNumEntries>
+        <Page.Type>CampaignPage</Page.Type>
+      </rval>
+    </getResponse>
+  </soap:Body>
+</soap:Envelope>
+
+[Jan 06 2016 17:36:29.000000 - INFO] POST /api/adwords/cm/v201506/BudgetService HTTP/1.1
+Host: adwords.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.5.9-1ubuntu4.14, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 469
+Authorization: Bearer ya29.YQIzlnHia9j2WcZBB5oMxJwMbF27c289FqVmXdMOLFY_4zEF4iHW2vf8E0Moy6Wxvd0QsQ
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201506">
+  <SOAP-ENV:Header>
+    <ns1:RequestHeader>
+      <ns1:clientCustomerId>851-164-5832</ns1:clientCustomerId>
+      <ns1:developerToken>8JYRK4bRANhro5btFM_dOA</ns1:developerToken>
+      <ns1:userAgent>eweb (AwApi-PHP/6.6.0, Common-PHP/6.6.0, PHP/5.5.9-1ubuntu4.14)</ns1:userAgent>
+    </ns1:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:mutate>
+      <ns1:operations>
+        <ns1:operator>ADD</ns1:operator>
+        <ns1:operand>
+          <ns1:name>Interplanetary Cruise Budget #568d0342aa287</ns1:name>
+          <ns1:period>DAILY</ns1:period>
+          <ns1:amount>
+            <ns1:microAmount>50000000</ns1:microAmount>
+          </ns1:amount>
+          <ns1:deliveryMethod>STANDARD</ns1:deliveryMethod>
+        </ns1:operand>
+      </ns1:operations>
+    </ns1:mutate>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Wed, 06 Jan 2016 12:06:48 GMT
+Expires: Wed, 06 Jan 2016 12:06:48 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 462
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+      <requestId>000528a93048ba500a4ca92aa704648e</requestId>
+      <serviceName>BudgetService</serviceName>
+      <methodName>mutate</methodName>
+      <operations>1</operations>
+      <responseTime>286</responseTime>
+    </ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <mutateResponse xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+      <rval>
+        <ListReturnValue.Type>BudgetReturnValue</ListReturnValue.Type>
+        <value>
+          <budgetId>465846919</budgetId>
+          <name>Interplanetary Cruise Budget #568d0342aa287</name>
+          <period>DAILY</period>
+          <amount>
+            <ComparableValue.Type>Money</ComparableValue.Type>
+            <microAmount>50000000</microAmount>
+          </amount>
+          <deliveryMethod>STANDARD</deliveryMethod>
+          <isExplicitlyShared>true</isExplicitlyShared>
+          <status>ENABLED</status>
+        </value>
+      </rval>
+    </mutateResponse>
+  </soap:Body>
+</soap:Envelope>
+
+[Jan 06 2016 17:36:32.000000 - ERROR] POST /api/adwords/cm/v201506/CampaignService HTTP/1.1
+Host: adwords.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.5.9-1ubuntu4.14, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 868
+Authorization: Bearer ya29.YQIzlnHia9j2WcZBB5oMxJwMbF27c289FqVmXdMOLFY_4zEF4iHW2vf8E0Moy6Wxvd0QsQ
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201506" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Header>
+    <ns1:RequestHeader>
+      <ns1:clientCustomerId>851-164-5832</ns1:clientCustomerId>
+      <ns1:developerToken>8JYRK4bRANhro5btFM_dOA</ns1:developerToken>
+      <ns1:userAgent>eweb (AwApi-PHP/6.6.0, Common-PHP/6.6.0, PHP/5.5.9-1ubuntu4.14)</ns1:userAgent>
+    </ns1:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:mutate>
+      <ns1:operations>
+        <ns1:operator>ADD</ns1:operator>
+        <ns1:operand>
+          <ns1:name>Interplanetary Cruise #568d0347bc012</ns1:name>
+          <ns1:status>PAUSED</ns1:status>
+          <ns1:startDate>20160107</ns1:startDate>
+          <ns1:endDate>20160206</ns1:endDate>
+          <ns1:budget>
+            <ns1:budgetId>465846919</ns1:budgetId>
+          </ns1:budget>
+          <ns1:adServingOptimizationStatus>ROTATE</ns1:adServingOptimizationStatus>
+          <ns1:frequencyCap>
+            <ns1:impressions>5</ns1:impressions>
+            <ns1:timeUnit>DAY</ns1:timeUnit>
+            <ns1:level>ADGROUP</ns1:level>
+          </ns1:frequencyCap>
+          <ns1:settings xsi:type="ns1:GeoTargetTypeSetting">
+            <ns1:positiveGeoTargetType>DONT_CARE</ns1:positiveGeoTargetType>
+            <ns1:negativeGeoTargetType>DONT_CARE</ns1:negativeGeoTargetType>
+          </ns1:settings>
+          <ns1:advertisingChannelType>SEARCH</ns1:advertisingChannelType>
+          <ns1:networkSetting>
+            <ns1:targetGoogleSearch>true</ns1:targetGoogleSearch>
+            <ns1:targetSearchNetwork>true</ns1:targetSearchNetwork>
+            <ns1:targetContentNetwork>true</ns1:targetContentNetwork>
+          </ns1:networkSetting>
+          <ns1:biddingStrategyConfiguration>
+            <ns1:biddingStrategyType>MANUAL_CPC</ns1:biddingStrategyType>
+            <ns1:biddingScheme xsi:type="ns1:ManualCpcBiddingScheme">
+              <ns1:enhancedCpcEnabled>false</ns1:enhancedCpcEnabled>
+            </ns1:biddingScheme>
+          </ns1:biddingStrategyConfiguration>
+        </ns1:operand>
+      </ns1:operations>
+      <ns1:operations>
+        <ns1:operator>ADD</ns1:operator>
+        <ns1:operand>
+          <ns1:name>Interplanetary Cruise #568d0347bc149</ns1:name>
+          <ns1:status>PAUSED</ns1:status>
+          <ns1:startDate>20160107</ns1:startDate>
+          <ns1:endDate>20160206</ns1:endDate>
+          <ns1:budget>
+            <ns1:budgetId>465846919</ns1:budgetId>
+          </ns1:budget>
+          <ns1:adServingOptimizationStatus>ROTATE</ns1:adServingOptimizationStatus>
+          <ns1:frequencyCap>
+            <ns1:impressions>5</ns1:impressions>
+            <ns1:timeUnit>DAY</ns1:timeUnit>
+            <ns1:level>ADGROUP</ns1:level>
+          </ns1:frequencyCap>
+          <ns1:settings xsi:type="ns1:GeoTargetTypeSetting">
+            <ns1:positiveGeoTargetType>DONT_CARE</ns1:positiveGeoTargetType>
+            <ns1:negativeGeoTargetType>DONT_CARE</ns1:negativeGeoTargetType>
+          </ns1:settings>
+          <ns1:advertisingChannelType>SEARCH</ns1:advertisingChannelType>
+          <ns1:networkSetting>
+            <ns1:targetGoogleSearch>true</ns1:targetGoogleSearch>
+            <ns1:targetSearchNetwork>true</ns1:targetSearchNetwork>
+            <ns1:targetContentNetwork>true</ns1:targetContentNetwork>
+          </ns1:networkSetting>
+          <ns1:biddingStrategyConfiguration>
+            <ns1:biddingStrategyType>MANUAL_CPC</ns1:biddingStrategyType>
+            <ns1:biddingScheme xsi:type="ns1:ManualCpcBiddingScheme">
+              <ns1:enhancedCpcEnabled>false</ns1:enhancedCpcEnabled>
+            </ns1:biddingScheme>
+          </ns1:biddingStrategyConfiguration>
+        </ns1:operand>
+      </ns1:operations>
+    </ns1:mutate>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Wed, 06 Jan 2016 12:06:51 GMT
+Expires: Wed, 06 Jan 2016 12:06:51 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 562
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+      <requestId>000528a9307e4d280a4c514a9504fd05</requestId>
+      <serviceName>CampaignService</serviceName>
+      <methodName>mutate</methodName>
+      <operations>2</operations>
+      <responseTime>38</responseTime>
+    </ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Server</faultcode>
+      <faultstring>[OperationAccessDenied.ADD_OPERATION_NOT_PERMITTED @ class campaignmgmt.campaign.MutateAction (ADD) requires CREATE_CAMPAIGN, OperationAccessDenied.ADD_OPERATION_NOT_PERMITTED @ class campaignmgmt.campaign.MutateAction (ADD) requires CREATE_CAMPAIGN]</faultstring>
+      <detail>
+        <ApiExceptionFault xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+          <message>[OperationAccessDenied.ADD_OPERATION_NOT_PERMITTED @ class campaignmgmt.campaign.MutateAction (ADD) requires CREATE_CAMPAIGN, OperationAccessDenied.ADD_OPERATION_NOT_PERMITTED @ class campaignmgmt.campaign.MutateAction (ADD) requires CREATE_CAMPAIGN]</message>
+          <ApplicationException.Type>ApiException</ApplicationException.Type>
+          <errors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="OperationAccessDenied">
+            <fieldPath>operations[0]</fieldPath>
+            <trigger/>
+            <errorString>OperationAccessDenied.ADD_OPERATION_NOT_PERMITTED</errorString>
+            <ApiError.Type>OperationAccessDenied</ApiError.Type>
+            <reason>ADD_OPERATION_NOT_PERMITTED</reason>
+          </errors>
+          <errors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="OperationAccessDenied">
+            <fieldPath>operations[1]</fieldPath>
+            <trigger/>
+            <errorString>OperationAccessDenied.ADD_OPERATION_NOT_PERMITTED</errorString>
+            <ApiError.Type>OperationAccessDenied</ApiError.Type>
+            <reason>ADD_OPERATION_NOT_PERMITTED</reason>
+          </errors>
+        </ApiExceptionFault>
+      </detail>
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+[Jan 07 2016 17:56:48.000000 - INFO] POST /api/adwords/cm/v201506/CampaignService HTTP/1.1
+Host: adwords.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.5.9-1ubuntu4.14, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 444
+Authorization: Bearer ya29.YgJQpYc6bZ-1GXA0-KHo8Zn9fKUht_0kSa8YdokP8EjxAtEtaVgDFB0zRmTkPjQURWGcDw
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201506">
+  <SOAP-ENV:Header>
+    <ns1:RequestHeader>
+      <ns1:clientCustomerId>851-164-5832</ns1:clientCustomerId>
+      <ns1:developerToken>8JYRK4bRANhro5btFM_dOA</ns1:developerToken>
+      <ns1:userAgent>eweb (AwApi-PHP/6.6.0, Common-PHP/6.6.0, PHP/5.5.9-1ubuntu4.14)</ns1:userAgent>
+    </ns1:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:get>
+      <ns1:serviceSelector>
+        <ns1:fields>Id</ns1:fields>
+        <ns1:fields>Name</ns1:fields>
+        <ns1:ordering>
+          <ns1:field>Name</ns1:field>
+          <ns1:sortOrder>ASCENDING</ns1:sortOrder>
+        </ns1:ordering>
+        <ns1:paging>
+          <ns1:startIndex>0</ns1:startIndex>
+          <ns1:numberResults>500</ns1:numberResults>
+        </ns1:paging>
+      </ns1:serviceSelector>
+    </ns1:get>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Thu, 07 Jan 2016 12:27:08 GMT
+Expires: Thu, 07 Jan 2016 12:27:08 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 302
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+      <requestId>000528bd96d258f80a4c23a1f7004a59</requestId>
+      <serviceName>CampaignService</serviceName>
+      <methodName>get</methodName>
+      <operations>1</operations>
+      <responseTime>331</responseTime>
+    </ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <getResponse xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+      <rval>
+        <totalNumEntries>0</totalNumEntries>
+        <Page.Type>CampaignPage</Page.Type>
+      </rval>
+    </getResponse>
+  </soap:Body>
+</soap:Envelope>
+
+[Jan 07 2016 17:57:44.000000 - INFO] POST /api/adwords/cm/v201506/BudgetService HTTP/1.1
+Host: adwords.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.5.9-1ubuntu4.14, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 469
+Authorization: Bearer ya29.YgLtI1a_kGkdklNK8iS32ucow0bkUKwrcK98beBAp-RTH69iUVyALxfFX73NPQ7fxoQqqQ
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201506">
+  <SOAP-ENV:Header>
+    <ns1:RequestHeader>
+      <ns1:clientCustomerId>851-164-5832</ns1:clientCustomerId>
+      <ns1:developerToken>8JYRK4bRANhro5btFM_dOA</ns1:developerToken>
+      <ns1:userAgent>eweb (AwApi-PHP/6.6.0, Common-PHP/6.6.0, PHP/5.5.9-1ubuntu4.14)</ns1:userAgent>
+    </ns1:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:mutate>
+      <ns1:operations>
+        <ns1:operator>ADD</ns1:operator>
+        <ns1:operand>
+          <ns1:name>Interplanetary Cruise Budget #568e59b8d5cf2</ns1:name>
+          <ns1:period>DAILY</ns1:period>
+          <ns1:amount>
+            <ns1:microAmount>50000000</ns1:microAmount>
+          </ns1:amount>
+          <ns1:deliveryMethod>STANDARD</ns1:deliveryMethod>
+        </ns1:operand>
+      </ns1:operations>
+    </ns1:mutate>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Thu, 07 Jan 2016 12:28:04 GMT
+Expires: Thu, 07 Jan 2016 12:28:04 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 463
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+      <requestId>000528bd9a2f62c00a4c538a42032c60</requestId>
+      <serviceName>BudgetService</serviceName>
+      <methodName>mutate</methodName>
+      <operations>1</operations>
+      <responseTime>173</responseTime>
+    </ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <mutateResponse xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+      <rval>
+        <ListReturnValue.Type>BudgetReturnValue</ListReturnValue.Type>
+        <value>
+          <budgetId>466213399</budgetId>
+          <name>Interplanetary Cruise Budget #568e59b8d5cf2</name>
+          <period>DAILY</period>
+          <amount>
+            <ComparableValue.Type>Money</ComparableValue.Type>
+            <microAmount>50000000</microAmount>
+          </amount>
+          <deliveryMethod>STANDARD</deliveryMethod>
+          <isExplicitlyShared>true</isExplicitlyShared>
+          <status>ENABLED</status>
+        </value>
+      </rval>
+    </mutateResponse>
+  </soap:Body>
+</soap:Envelope>
+
+[Jan 07 2016 17:57:52.000000 - ERROR] POST /api/adwords/cm/v201506/CampaignService HTTP/1.1
+Host: adwords.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.5.9-1ubuntu4.14, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 882
+Authorization: Bearer ya29.YgLtI1a_kGkdklNK8iS32ucow0bkUKwrcK98beBAp-RTH69iUVyALxfFX73NPQ7fxoQqqQ
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201506" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Header>
+    <ns1:RequestHeader>
+      <ns1:clientCustomerId>851-164-5832</ns1:clientCustomerId>
+      <ns1:developerToken>8JYRK4bRANhro5btFM_dOA</ns1:developerToken>
+      <ns1:userAgent>eweb (AwApi-PHP/6.6.0, Common-PHP/6.6.0, PHP/5.5.9-1ubuntu4.14)</ns1:userAgent>
+    </ns1:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:mutate>
+      <ns1:operations>
+        <ns1:operator>ADD</ns1:operator>
+        <ns1:operand>
+          <ns1:name>Interplanetary Cruise #568e59c26af3a</ns1:name>
+          <ns1:status>PAUSED</ns1:status>
+          <ns1:startDate>20160108</ns1:startDate>
+          <ns1:endDate>20160207</ns1:endDate>
+          <ns1:budget>
+            <ns1:budgetId>466213399</ns1:budgetId>
+          </ns1:budget>
+          <ns1:adServingOptimizationStatus>ROTATE</ns1:adServingOptimizationStatus>
+          <ns1:frequencyCap>
+            <ns1:impressions>5</ns1:impressions>
+            <ns1:timeUnit>DAY</ns1:timeUnit>
+            <ns1:level>ADGROUP</ns1:level>
+          </ns1:frequencyCap>
+          <ns1:settings xsi:type="ns1:GeoTargetTypeSetting">
+            <ns1:positiveGeoTargetType>DONT_CARE</ns1:positiveGeoTargetType>
+            <ns1:negativeGeoTargetType>DONT_CARE</ns1:negativeGeoTargetType>
+          </ns1:settings>
+          <ns1:advertisingChannelType>SEARCH</ns1:advertisingChannelType>
+          <ns1:networkSetting>
+            <ns1:targetGoogleSearch>true</ns1:targetGoogleSearch>
+            <ns1:targetSearchNetwork>true</ns1:targetSearchNetwork>
+            <ns1:targetContentNetwork>true</ns1:targetContentNetwork>
+          </ns1:networkSetting>
+          <ns1:biddingStrategyConfiguration>
+            <ns1:biddingStrategyType>MANUAL_CPC</ns1:biddingStrategyType>
+            <ns1:biddingScheme xsi:type="ns1:ManualCpcBiddingScheme">
+              <ns1:enhancedCpcEnabled>false</ns1:enhancedCpcEnabled>
+            </ns1:biddingScheme>
+          </ns1:biddingStrategyConfiguration>
+        </ns1:operand>
+      </ns1:operations>
+      <ns1:operations>
+        <ns1:operator>ADD</ns1:operator>
+        <ns1:operand>
+          <ns1:name>Interplanetary Cruise #568e59c26b01b</ns1:name>
+          <ns1:status>PAUSED</ns1:status>
+          <ns1:startDate>20160108</ns1:startDate>
+          <ns1:endDate>20160207</ns1:endDate>
+          <ns1:budget>
+            <ns1:budgetId>466213399</ns1:budgetId>
+          </ns1:budget>
+          <ns1:adServingOptimizationStatus>ROTATE</ns1:adServingOptimizationStatus>
+          <ns1:frequencyCap>
+            <ns1:impressions>5</ns1:impressions>
+            <ns1:timeUnit>DAY</ns1:timeUnit>
+            <ns1:level>ADGROUP</ns1:level>
+          </ns1:frequencyCap>
+          <ns1:settings xsi:type="ns1:GeoTargetTypeSetting">
+            <ns1:positiveGeoTargetType>DONT_CARE</ns1:positiveGeoTargetType>
+            <ns1:negativeGeoTargetType>DONT_CARE</ns1:negativeGeoTargetType>
+          </ns1:settings>
+          <ns1:advertisingChannelType>SEARCH</ns1:advertisingChannelType>
+          <ns1:networkSetting>
+            <ns1:targetGoogleSearch>true</ns1:targetGoogleSearch>
+            <ns1:targetSearchNetwork>true</ns1:targetSearchNetwork>
+            <ns1:targetContentNetwork>true</ns1:targetContentNetwork>
+          </ns1:networkSetting>
+          <ns1:biddingStrategyConfiguration>
+            <ns1:biddingStrategyType>MANUAL_CPC</ns1:biddingStrategyType>
+            <ns1:biddingScheme xsi:type="ns1:ManualCpcBiddingScheme">
+              <ns1:enhancedCpcEnabled>false</ns1:enhancedCpcEnabled>
+            </ns1:biddingScheme>
+          </ns1:biddingStrategyConfiguration>
+        </ns1:operand>
+      </ns1:operations>
+    </ns1:mutate>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Thu, 07 Jan 2016 12:28:12 GMT
+Expires: Thu, 07 Jan 2016 12:28:12 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 562
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+      <requestId>000528bd9aa8b1700a4cad4a5c08c235</requestId>
+      <serviceName>CampaignService</serviceName>
+      <methodName>mutate</methodName>
+      <operations>2</operations>
+      <responseTime>32</responseTime>
+    </ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Server</faultcode>
+      <faultstring>[OperationAccessDenied.ADD_OPERATION_NOT_PERMITTED @ class campaignmgmt.campaign.MutateAction (ADD) requires CREATE_CAMPAIGN, OperationAccessDenied.ADD_OPERATION_NOT_PERMITTED @ class campaignmgmt.campaign.MutateAction (ADD) requires CREATE_CAMPAIGN]</faultstring>
+      <detail>
+        <ApiExceptionFault xmlns="https://adwords.google.com/api/adwords/cm/v201506">
+          <message>[OperationAccessDenied.ADD_OPERATION_NOT_PERMITTED @ class campaignmgmt.campaign.MutateAction (ADD) requires CREATE_CAMPAIGN, OperationAccessDenied.ADD_OPERATION_NOT_PERMITTED @ class campaignmgmt.campaign.MutateAction (ADD) requires CREATE_CAMPAIGN]</message>
+          <ApplicationException.Type>ApiException</ApplicationException.Type>
+          <errors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="OperationAccessDenied">
+            <fieldPath>operations[0]</fieldPath>
+            <trigger/>
+            <errorString>OperationAccessDenied.ADD_OPERATION_NOT_PERMITTED</errorString>
+            <ApiError.Type>OperationAccessDenied</ApiError.Type>
+            <reason>ADD_OPERATION_NOT_PERMITTED</reason>
+          </errors>
+          <errors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="OperationAccessDenied">
+            <fieldPath>operations[1]</fieldPath>
+            <trigger/>
+            <errorString>OperationAccessDenied.ADD_OPERATION_NOT_PERMITTED</errorString>
+            <ApiError.Type>OperationAccessDenied</ApiError.Type>
+            <reason>ADD_OPERATION_NOT_PERMITTED</reason>
+          </errors>
+        </ApiExceptionFault>
+      </detail>
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
