@@ -29,8 +29,8 @@ function GetCampaigns(AdWordsUser $user, $adwords_version) {
 					                    'budget' => $campaign->budget->amount->microAmount,
 					                    'campaignsubtype'=>$campaign->advertisingChannelSubType,
 					                    'campaigntype'=>$campaign->advertisingChannelType,
-					                    'labels'=>$campaign->frequencyCap->impressions,
-					                    'impressions' =>$campaign->labels
+					                     'impressions'=>$campaign->frequencyCap->impressions,
+					                    'labels' =>$campaign->labels
 
 					                );
 					            }
