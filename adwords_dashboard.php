@@ -1,5 +1,8 @@
-<?php require_once 'lib/Google/Api/Ads/AdWords/Lib/AdWordsUser.php';
-	  $adwords_version ="v201509"; 
+<?php 
+include('function.php');
+require_once 'lib/Google/Api/Ads/AdWords/Lib/AdWordsUser.php';
+$adwords_version ="v201509"; 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,8 +32,8 @@
 									//data - response from server
 									
 									$(".states-data").html(data);
-									//$("div:last").hide();
-								
+									$(".main_tab").hide();
+																	
 								},
 							error: function (jqXHR, textStatus, errorThrown)
 								{
@@ -49,49 +52,7 @@
 			<div class="panel-heading col-md-2">
 				<h3>All campaigns</h3>
 				<ul class="nav panel-tabs">
-				<?php	
-
-					function GetCampaigns(AdWordsUser $user, $adwords_version) {
-
-					    // Get the service, which loads the required classes.
-					    $campaignService = $user->GetService('CampaignService', $adwords_version);
-
-					    // Create selector.
-					    $selector = new Selector();
-					    $selector->fields = array('Id', 'Name', 'Status');
-					    $selector->ordering[] = new OrderBy('Name', 'ASCENDING');
-
-					    // Filter out deleted criteria.
-					    $selector->predicates[] = new Predicate('Status', 'NOT_IN', array('REMOVED','PAUSED'));
-
-					    // Create paging controls.
-					    $selector->paging = new Paging(0, AdWordsConstants::RECOMMENDED_PAGE_SIZE);
-
-					    $ret = array();
-					    do {
-					        // Make the get request.
-					        $page = $campaignService->get($selector);
-
-					        // Display results.
-					        if (isset($page->entries)) {
-					            foreach ($page->entries as $campaign) {
-					                //printf("Campaign with name '%s' and id '%s' was found with Status: '%s'\n",
-					                // $campaign->name, $campaign->id, $campaign->status);
-					                $ret[] = array(
-					                    'name' => $campaign->name,
-					                    'id' => $campaign->id,
-					                    'active' => (strcmp($campaign->status,'ACTIVE')==0)?1:0
-					                );
-					            }
-					        } else {
-					            echo "No campaigns were found.\n";
-					        }
-					        // Advance the paging index.
-					        $selector->paging->startIndex += AdWordsConstants::RECOMMENDED_PAGE_SIZE;
-					    } while ($page->totalNumEntries > $selector->paging->startIndex);
-					    
-					    return $ret;
-					}
+				<?php					
 
 					try {
 					  // Get AdWordsUser from credentials in "../auth.ini"
@@ -111,7 +72,7 @@
 
 					<?php  } 
 					  
-					} catch(Exception $e) {
+					}catch(Exception $e) {
 					 
 					}
 					       
@@ -120,8 +81,7 @@
 			</div>
 			<div class="panel-body col-md-10">
 				<div class="tab-content">
-				<div class="states-data"></div>
-					<div class="tab-pane abcdef active" id="tab">
+				    <div class="tab-pane abcdef active main_tab" id="tab">
 					<input type="hidden" name="name" value=""/>
 						<ul class="nav nav-tabs">
 							<li class="active"><a data-toggle="tab" href="#menu1">Ad groups</a></li>
@@ -208,7 +168,7 @@
 												<input type="radio" name="button" value="item-radio1">
 											</div>
 											<div class="item-cam">
-												<span>Campaign<?php echo $row['id']; ?></span>
+												<span>Campaign</span>
 											</div>
 											<div class="item-budget">
 												<span>Budget</span>
@@ -244,182 +204,64 @@
 												<span>Labels</span>
 											</div>
 										</li>
-										<li>
-											<div class="item-checkbox">
-												<input type="checkbox"/>
-											</div>
-											<div class="item-radio">
-												<input type="radio" name="button" value="item-radio2">
-											</div>
-											<div class="item-cam">
-												<span>Text</span>
-											</div>
-											<div class="item-budget">
-												<span>Text Text Text</span>
-											</div>
-											<div class="item-status">
-												<span>Text</span>
-											</div>
-											<div class="item-cam-type">
-												<span>Text</span>
-											</div>
-											<div class="item-cam-sub">
-												<span>Text</span>
-											</div>
-											<div class="item-click">
-												<span>Text</span>
-											</div>
-											<div class="item-impr">
-												<span>Text</span>
-											</div>
-											<div class="item-ctr">
-												<span>Text</span>
-											</div>
-											<div class="item-avg">
-												<span>Text</span>
-											</div>
-											<div class="item-cost">
-												<span>Text</span>
-											</div>
-											<div class="item-pos">
-												<span>Text</span>
-											</div>
-											<div class="item-lab">
-												<span>Text</span>
-											</div>
-										</li>
-										<li>
-											<div class="item-checkbox">
-												<input type="checkbox"/>
-											</div>
-											<div class="item-radio">
-												<input type="radio" name="button" value="item-radio3">
-											</div>
-											<div class="item-cam">
-												<span>Text</span>
-											</div>
-											<div class="item-budget">
-												<span>Text Text Text</span>
-											</div>
-											<div class="item-status">
-												<span>Text</span>
-											</div>
-											<div class="item-cam-type">
-												<span>Text</span>
-											</div>
-											<div class="item-cam-sub">
-												<span>Text</span>
-											</div>
-											<div class="item-click">
-												<span>Text</span>
-											</div>
-											<div class="item-impr">
-												<span>Text</span>
-											</div>
-											<div class="item-ctr">
-												<span>Text</span>
-											</div>
-											<div class="item-avg">
-												<span>Text</span>
-											</div>
-											<div class="item-cost">
-												<span>Text</span>
-											</div>
-											<div class="item-pos">
-												<span>Text</span>
-											</div>
-											<div class="item-lab">
-												<span>Text</span>
-											</div>
-										</li>
-										<li>
-											<div class="item-checkbox">
-												<input type="checkbox"/>
-											</div>
-											<div class="item-radio">
-												<input type="radio" name="button" value="item-radio4">
-											</div>
-											<div class="item-cam">
-												<span>Text</span>
-											</div>
-											<div class="item-budget">
-												<span>Text Text Text</span>
-											</div>
-											<div class="item-status">
-												<span>Text</span>
-											</div>
-											<div class="item-cam-type">
-												<span>Text</span>
-											</div>
-											<div class="item-cam-sub">
-												<span>Text</span>
-											</div>
-											<div class="item-click">
-												<span>Text</span>
-											</div>
-											<div class="item-impr">
-												<span>Text</span>
-											</div>
-											<div class="item-ctr">
-												<span>Text</span>
-											</div>
-											<div class="item-avg">
-												<span>Text</span>
-											</div>
-											<div class="item-cost">
-												<span>Text</span>
-											</div>
-											<div class="item-pos">
-												<span>Text</span>
-											</div>
-											<div class="item-lab">
-												<span>Text</span>
-											</div>
-										</li>
-										<li>
-											<div class="item-checkbox">
-												<input type="checkbox"/>
-											</div>
-											<div class="item-radio">
-												<input type="radio" name="button" value="item-radio5">
-											</div>
-											<div class="item-cam">
-												<span>Text</span>
-											</div>
-											<div class="item-budget">
-												<span>Text Text Text</span>
-											</div>
-											<div class="item-status">
-												<span>Text</span>
-											</div>
-											<div class="item-cam-type">
-												<span>Text</span>
-											</div>
-											<div class="item-cam-sub">
-												<span>Text</span>
-											</div>
-											<div class="item-click">
-												<span>Text</span>
-											</div>
-											<div class="item-impr">
-												<span>Text</span>
-											</div>
-											<div class="item-ctr">
-												<span>Text</span>
-											</div>
-											<div class="item-avg">
-												<span>Text</span>
-											</div>
-											<div class="item-cost">
-												<span>Text</span>
-											</div>
-											<div class="item-pos">
-												<span>Text</span>
-											</div>
-											<div class="item-lab">
-												<span>Text</span>
-											</div>
-										</li>
+
+
+										<?php
+											try {	
+													  $user = new AdWordsUser();
+													  $user->LogAll();	
+													  $all_campaign = GetCampaigns($user,$adwords_version); 
+													   foreach($all_campaign as $row){ ?>
+													   	<li>
+															<div class="item-checkbox">
+																<input type="checkbox"/>
+															</div>
+															<div class="item-radio">
+																<input type="radio" name="button" value="item-radio2">
+															</div>
+															<div class="item-cam">
+																<span><?php echo $row['name']; ?></span>
+															</div>
+															<div class="item-budget">
+																<span><?php echo "$".($row['budget']/1000000).".00"; ?></span>
+															</div>
+															<div class="item-status">
+																<span><?php echo $row['active']; ?></span>
+															</div>
+															<div class="item-cam-type">
+																<span><?php echo $row['campaigntype']; ?></span>
+															</div>
+															<div class="item-cam-sub">
+																<span><?php echo $row['campaignsubtype']; ?></span>
+															</div>
+															<div class="item-click">
+																<span>Text</span>
+															</div>
+															<div class="item-impr">
+																<span><?php echo $row['impressions']; ?></span>
+															</div>
+															<div class="item-ctr">
+																<span>Text</span>
+															</div>
+															<div class="item-avg">
+																<span>Text</span>
+															</div>
+															<div class="item-cost">
+																<span>Text</span>
+															</div>
+															<div class="item-pos">
+																<span>Text</span>
+															</div>
+															<div class="item-lab">
+																<span><?php echo $row['labels']; ?></span>
+															</div>
+														</li>				    
+
+													<?php  } 
+													  
+												}catch(Exception $e) {
+													 
+												} ?>										
 									</ul>
 								</div>
 							</div>
@@ -434,6 +276,7 @@
 							</div>
 						</div>
 					</div>
+					<div class="states-data"></div>
 					<div class="tab-pane" id="tab2">
 						<ul class="nav nav-tabs">
 							<li class="active"><a data-toggle="tab" href="#menu5">Ad groups</a></li>
