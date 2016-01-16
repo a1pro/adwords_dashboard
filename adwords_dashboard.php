@@ -1,51 +1,35 @@
+<?php include('header.php'); ?>
+<body>  
+<div class="addcamp"></div>
 <?php 
-include('function.php');
-require_once 'lib/Google/Api/Ads/AdWords/Lib/AdWordsUser.php';
-$adwords_version ="v201509"; 
+if(@$_POST['submit']){
+
+  $name = $_POST['name'];
+  $channel = $_POST['advertisingChannelType'];
+  $typeinfo = $_POST['typeinfo'];
+  $budget = ($_POST['budget']*1000000);
+  $startdate = $_POST['startdate'];
+  $sdate = explode('/', $startdate);
+  $stdate = $sdate[2].$sdate[0].$sdate[1];
+  $enddate = $_POST['enddate'];
+  $edate = explode('/', $enddate);
+  $etdate = $edate[2].$edate[0].$edate[1];
+  //echo $enddate = $_POST['enddate']; 
+
+try {
+   // relative to the AdWordsUser.php file's directory.
+  $user = new AdWordsUser();
+  // Log every SOAP XML request and response.
+  $user->LogAll();
+  // Run the example.
+  AddCampaigns($user,$name,$channel,$typeinfo,$budget,$stdate,$etdate);
+} catch (Exception $e) {
+  echo "An error has occurred: %s\n", $e->getMessage();
+} 
+
+}
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<title>Google Adwords</title>
-
-		<!-- Css Start -->
-		<link href="css/bootstrap.css" rel="stylesheet">
-		<link href="css/custom.css" rel="stylesheet">
-		<link href="fonts/calibri/stylesheet.css" rel="stylesheet">	
-		<script>          
-	        	function openTab(id){	 
-	                $('.main-tab').click(function(){
-					 var a =  'tab'+$(this).val();
-					  $('.abcdef').attr('id',a);
-					  $("input[name='name']").val(id);					  
-					  $.ajax({
-					  		url: "getcampaign.php?_cid="+$(this).val(),
-                            type: "POST",
-                            data : {},
-							success: function(data, textStatus, jqXHR)
-								{
-									//data - response from server
-									
-									$(".states-data").html(data);
-									$(".main_tab").hide();
-																	
-								},
-							error: function (jqXHR, textStatus, errorThrown)
-								{
-								}
-
-					  });
-					});
-			  	}		
-
-		</script>
-	</head>
-<body>  
 	<!-- Dashboard Area Start -->
 	<div class="col-md-12 dashboard_sec">
 		<div class="panel panel-primary">
@@ -123,10 +107,16 @@ $adwords_version ="v201509";
 								</ul>
 								<ul class="nav nav-tabs cus-drop-down">
 									<li class="dropdown">
-										<a data-toggle="dropdown" href="#">Campaign<span class="caret"></span></a>
+										<a data-toggle="dropdown" href="#">Add Campaign<span class="caret"></span></a>
 										<ul role="menu" class="dropdown-menu">
-											<li><a data-toggle="tab" href="#tab4default">Default 4</a></li>
-											<li><a data-toggle="tab" href="#tab5default">Default 5</a></li>
+											<li><a data-toggle="tab" href="#tab4default" class="get_type">Search And Display Networks</a></li>
+											<li><a data-toggle="tab" href="#tab5default" class="get_type">Search Network with Display Select</a></li>
+											<!--li><a data-toggle="tab" href="#tab6default" class="get_type">Search Network only</a></li>
+											<li><a data-toggle="tab" href="#tab7default" class="get_type">Display Network only</a></li>
+											<li><a data-toggle="tab" href="#tab8default" class="get_type">Shopping</a></li>
+											<li><a data-toggle="tab" href="#tab9default" class="get_type">Video</a></li>
+											<li><a data-toggle="tab" href="#tab10default" class="get_type">Universal app campaign</a></li-->
+
 										</ul>
 									</li>
 									<li class="dropdown">
@@ -225,14 +215,35 @@ $adwords_version ="v201509";
 															<div class="item-budget">
 																<span><?php echo "$".($row['budget']/1000000).".00"; ?></span>
 															</div>
-															<div class="item-status">
-																<span><?php echo $row['active']; ?></span>
+															<div class="item-status"> 
+																<span>
+																	
+																		<?php
+		                                                                if($row['active']=="ENABLED"){
+
+		                                                                  	echo "Eligible"; 
+
+		                                                                }else{
+
+                                                                  		echo $row['active'];
+
+                                                                  	}   ?></span>
 															</div>
 															<div class="item-cam-type">
-																<span><?php echo $row['campaigntype']; ?></span>
+																<span><?php
+
+                                                                  if($row['campaigntype']=="SEARCH"){
+
+                                                                  	echo "Search Network with Display Select";
+
+                                                                  } ?>
+
+																 </span>
 															</div>
 															<div class="item-cam-sub">
-																<span><?php echo $row['campaignsubtype']; ?></span>
+																<span>All Features
+																<?php //echo $row['campaignsubtype']; ?>
+																</span>
 															</div>
 															<div class="item-click">
 																<span>Text</span>
