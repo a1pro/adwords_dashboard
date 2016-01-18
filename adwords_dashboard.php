@@ -154,7 +154,7 @@ try {
 											<div class="item-checkbox">
 												<input type="checkbox"/>
 											</div>
-											<div class="item-radio">
+											<div class="item-radio">											 
 												<input type="radio" name="button" value="item-radio1">
 											</div>
 											<div class="item-cam">
@@ -206,8 +206,27 @@ try {
 															<div class="item-checkbox">
 																<input type="checkbox"/>
 															</div>
-															<div class="item-radio">
-																<input type="radio" name="button" value="item-radio2">
+															<div class="item-radio" >
+																	<?php  if($row['active']=="ENABLED"){ ?>
+																		<img src="abc.png" class="showstate" id="<?php echo $row['id']  ?>">
+                                                               		<?php }elseif($row['active']=="PAUSED"){ ?>
+                                                               			<img src="paused.png" class="showstate" id="<?php echo $row['id']  ?>">
+                                                               		<?php }elseif($row['active']=="REMOVED"){ ?>
+                                                               			<img src="remove.png" class="showstate" id="<?php echo $row['id']  ?>">
+                                                               		<?php } ?>
+
+                                                               		<ul style="display:none;background:white;border:1px gray solid" class="<?php echo $row['id']; ?>">
+
+                                                           				<li class="stateval" value="enable"><a href="editcamp.php?value=_re&c_id=<?php echo $row['id']; ?>"><img src="abc.png">Enable</a></li>
+                                                           				<li class="stateval" value="pause"><a href="editcamp.php?value=_rp&c_id=<?php echo $row['id']; ?>"><img src="paused.png">Pause</a></li>
+                                                           				<li class="stateval" value="remove"><a href="editcamp.php?value=_rr&c_id=<?php echo $row['id']; ?>"><img src="remove.png">Remove</a></li>
+
+                                                               		</ul>
+																   <!--select name="chng_state" style="display:none" class="<?php echo $row['id']  ?>">	  	
+																    	<option value="enabled"><img src="abc.png">Enable</option>
+																    	<option value="paused"><img src="paused.png">Pause</option>
+																    	<option value="removed"><img src="remove.png">Remove</option>
+																    </select-->
 															</div>
 															<div class="item-cam">
 																<span><?php echo $row['name']; ?></span>
@@ -1148,20 +1167,5 @@ try {
 			</div>
 		</div>
     </div>
+    <?php include('footer.php'); ?>
 	
-	
-	<!-- Jquery Start Here -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-	
-	<!-- Tab Jquery Starts -->
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('.main-tab').click(function(){ 
-				$('.main-tab').children("ul.inner-tab").hide();
-				$(this).children("ul.inner-tab").show();
-			});
-		 });
-	</script>
-</body>
-</html>
