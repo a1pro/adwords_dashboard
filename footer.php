@@ -15,12 +15,11 @@
 				var id  = $(this).attr('id');
 				$("."+id).toggle();					
        		});
-       		$(function() {
-				$( "#datepicker" ).datepicker();
-			});
-			$(function() {
-				$( "#datepicker1" ).datepicker();
-			});
+
+       		$(".show_ad_grp").click(function(){
+       				//alert("kfudgdf");
+                    $("#adgrp").toggle();	
+      		});
 		});
 	</script>
 </body>
