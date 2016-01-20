@@ -19,6 +19,11 @@
        		$(".show_ad_grp").click(function(){
        				//alert("kfudgdf");
                     $("#adgrp").toggle();	
+      		});     		
+
+       		$(".show_text_ad").click(function(){
+       				//alert("kfudgdf");
+                    $("#textad").toggle();	
       		});
 		});
 	</script>
