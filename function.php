@@ -327,7 +327,7 @@ function GetTextAds(AdWordsUser $user, $adwords_version) {
 
   // Create selector.
   $selector = new Selector();
-  $selector->fields = array('Headline', 'Id');
+  $selector->fields = array('Headline', 'Id','Description1','Description2','DisplayUrl','Url','Status','AdGroupId','CampaignId');
   $selector->ordering[] = new OrderBy('Headline', 'ASCENDING');
 
   // Create predicates.
@@ -343,6 +343,9 @@ function GetTextAds(AdWordsUser $user, $adwords_version) {
   do {
     // Make the get request.
     $page = $adGroupAdService->get($selector);
+    //echo "<pre>";
+   // print_r($page);
+   // echo "</pre>";
        
     // Display results.
     if (isset($page->entries)) {
@@ -350,11 +353,15 @@ function GetTextAds(AdWordsUser $user, $adwords_version) {
 
         $ret[] = array(
           'headline' => $adGroupAd->ad->headline,
-          'id' => $adGroupAd->ad->id
-
-        );
-        /*printf("Text ad with headline '%s' and ID '%s' was found.\n",
-            $adGroupAd->ad->headline, $adGroupAd->ad->id);*/
+          'id' => $adGroupAd->ad->id,
+          'description1' => $adGroupAd->ad->description1,
+          'description2' => $adGroupAd->ad->description2,
+          'displayUrl' => $adGroupAd->ad->displayUrl,
+          'finalUrl' => $adGroupAd->ad->finalUrls,
+          'status' => $adGroupAd->ad->status,
+          'adgroupid' => $adGroupAd->adGroupId,
+          'campaignid' => $adGroupAd->campaignId          
+      );
       }
     } else {
       print "No text ads were found.\n";
@@ -364,6 +371,55 @@ function GetTextAds(AdWordsUser $user, $adwords_version) {
     $selector->paging->startIndex += AdWordsConstants::RECOMMENDED_PAGE_SIZE;
   } while ($page->totalNumEntries > $selector->paging->startIndex);
   return $ret;
+}
+
+
+
+function GetAdGroupfortextads(AdWordsUser $user, $adwords_version, $adgroupid) {
+    // Get the service, which loads the required classes.
+    $adgroupService = $user->GetService('AdGroupService', $adwords_version);
+
+    // Create selector.
+    $selector = new Selector();
+    $selector->fields = array('Id', 'Name', 'CampaignId', 'Status','CpcBid','CampaignName');
+    $selector->ordering[] = new OrderBy('CampaignId', 'ASCENDING');
+
+    // Filter out deleted criteria.
+    $selector->predicates[] = new Predicate('Id', 'IN', $adgroupid);
+    $selector->predicates[] = new Predicate('Status', 'NOT_IN', array('REMOVED','PAUSED'));
+
+
+    // Create paging controls.
+    $selector->paging = new Paging(0, AdWordsConstants::RECOMMENDED_PAGE_SIZE);
+
+    $ret = array();
+    do {
+        // Make the get request.
+        $page = $adgroupService->get($selector);      
+        // Display results.
+        if (isset($page->entries)) {
+            foreach ($page->entries as $adgroup) {
+                //printf("AdGroup with name '%s' and id '%s' was found for Campaign: '%s' and Status: '%s'\n",
+                // $adgroup->name, $adgroup->id, $adgroup->campaignId, $adgroup->status);
+                $ret[] = array(
+                    'name' => $adgroup->name,
+                    'id' => $adgroup->id,
+                    'campaignId' => $adgroup->campaignId,
+                    'campaignName' => $adgroup->campaignName,
+                    'cpc' => $adgroup->biddingStrategyConfiguration->bids->bid->microAmount,
+                    'active' => $adgroup->status
+                );
+            }
+        } else {
+
+           $result= "no";
+           return $result;
+        }
+        // Advance the paging index.
+        $selector->paging->startIndex += AdWordsConstants::RECOMMENDED_PAGE_SIZE;
+    } while ($page->totalNumEntries > $selector->paging->startIndex);   
+     //print_r($ret); 
+    return $ret;
 }
 
 ?>
