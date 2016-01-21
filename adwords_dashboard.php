@@ -687,10 +687,7 @@ try {
 													  //print_r($$GetAdGroup);
 													 // echo "chikooo";
 													  foreach($GetTextAds as $row){ 
-                                                      // echo $row['campaignId'];
-													/*  $GetadgrpCampaigns  = GetadgrpCampaigns($user, $adwords_version,$row['campaignId']);
-													  //	print_r($GetadgrpCampaigns);
-                                                           if($GetadgrpCampaigns != "no" ){ */
+                                                    
 
 													   	?>
 													   	<li>
@@ -716,7 +713,10 @@ try {
 																 
 															</div>
 															<div class="item-cam">
-																<span><?php echo $row['headline']; ?></span>
+																<span><?php echo $row['headline']; ?><br>
+																<?php echo $row['description1']; ?><br>
+																<?php echo $row['description2']; ?><br>
+																<?php echo $row['displayUrl']; ?><br></span>
 															</div>
 															<div class="item-budget">
 																<span><?php echo $row['campaignName']; ?></span>
