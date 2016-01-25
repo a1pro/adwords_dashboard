@@ -1,6 +1,4 @@
-<?php include('header.php'); 
-?>
-<body>  
+<?php include('header.php'); ?>
 <div class="addcamp"></div>
 <?php 
 if(@$_POST['submit']){
@@ -15,39 +13,17 @@ if(@$_POST['submit']){
   $enddate = $_POST['enddate'];
   $edate = explode('/', $enddate);
   $etdate = $edate[2].$edate[0].$edate[1];
-  //echo $enddate = $_POST['enddate']; 
 
-try {
-   // relative to the AdWordsUser.php file's directory.
-  $user = new AdWordsUser();
-  // Log every SOAP XML request and response.
-  $user->LogAll();
-  // Run the example.
   AddCampaigns($user,$name,$channel,$typeinfo,$budget,$stdate,$etdate);
-} catch (Exception $e) {
-  echo "An error has occurred: %s\n", $e->getMessage();
-} 
 
-}
-
-?>
+} ?>
 	<!-- Dashboard Area Start -->
 	<div class="col-md-12 dashboard_sec">
 		<div class="panel panel-primary">
 			<div class="panel-heading col-md-2">
 				<h3>All campaigns</h3>
 				<ul class="nav panel-tabs">
-				<?php					
-
-					try {
-					  // Get AdWordsUser from credentials in "../auth.ini"
-					  // relative to the AdWordsUser.php file's directory.
-					  $user = new AdWordsUser();
-
-					  // Log every SOAP XML request and response.
-					  $user->LogAll();
-
-					  // Run the example.
+				<?php
 					  $all_campaign = GetCampaigns($user,$adwords_version); 
 					   foreach($all_campaign as $row){ ?>
 
@@ -55,19 +31,13 @@ try {
 						<a  class="active" href="#tab<?php echo $row['id']; ?>" onclick="openTab(<?php echo $row['id']; ?>)"  data-toggle="tab"><?php echo $row['name']; ?></a>
 					   </li>				    
 
-					<?php  } 
-					  
-					}catch(Exception $e) {
-					 
-					}
-					       
-					?>				
+					<?php  }  ?>				
 				</ul>
 			</div>
 			<div class="panel-body col-md-10">
 				<div class="tab-content">
 				    <div class="tab-pane abcdef active main_tab" id="tab">
-					<input type="hidden" name="name" value=""/>
+						<input type="hidden" name="name" value=""/>
 						<ul class="nav nav-tabs">
 							<li class="active"><a data-toggle="tab" href="#menu1">Campaigns</a></li>
 							<li><a data-toggle="tab" href="#menu2">Ad Groups</a></li>
@@ -112,12 +82,7 @@ try {
 										<ul role="menu" class="dropdown-menu">
 											<li><a data-toggle="tab" href="#tab4default" class="get_type">Search And Display Networks</a></li>
 											<li><a data-toggle="tab" href="#tab5default" class="get_type">Search Network with Display Select</a></li>
-											<!--li><a data-toggle="tab" href="#tab6default" class="get_type">Search Network only</a></li>
-											<li><a data-toggle="tab" href="#tab7default" class="get_type">Display Network only</a></li>
-											<li><a data-toggle="tab" href="#tab8default" class="get_type">Shopping</a></li>
-											<li><a data-toggle="tab" href="#tab9default" class="get_type">Video</a></li>
-											<li><a data-toggle="tab" href="#tab10default" class="get_type">Universal app campaign</a></li-->
-
+										
 										</ul>
 									</li>
 									<li class="dropdown">
@@ -198,9 +163,6 @@ try {
 
 
 										<?php
-											try {	
-													  $user = new AdWordsUser();
-													  $user->LogAll();	
 													  $all_campaign = GetCampaigns($user,$adwords_version); 
 													   foreach($all_campaign as $row){ ?>
 													   	<li>
@@ -223,11 +185,7 @@ try {
                                                            				<li class="stateval" value="remove"><a href="editcamp.php?value=_rr&c_id=<?php echo $row['id']; ?>"><img src="remove.png">Remove</a></li>
 
                                                                		</ul>
-																   <!--select name="chng_state" style="display:none" class="<?php echo $row['id']  ?>">	  	
-																    	<option value="enabled"><img src="abc.png">Enable</option>
-																    	<option value="paused"><img src="paused.png">Pause</option>
-																    	<option value="removed"><img src="remove.png">Remove</option>
-																    </select-->
+																 
 															</div>
 															<div class="item-cam">
 																<span><?php echo $row['name']; ?></span>
@@ -261,7 +219,7 @@ try {
 															</div>
 															<div class="item-cam-sub">
 																<span>All Features
-																<?php //echo $row['campaignsubtype']; ?>
+																
 																</span>
 															</div>
 															<div class="item-click">
@@ -287,13 +245,10 @@ try {
 															</div>
 														</li>				    
 
-													<?php  } 													  
-												}catch(Exception $e) {													 
-												} ?>										
+													<?php  } ?>										
 									</ul>
 								</div>
 							</div>
-<!-- ///////////////////// Add ad groups start //////////////////////////////////////////////////////////////////-->
 							<div id="menu2" class="tab-pane fade">
 								
 								<ul class="nav nav-tabs">
@@ -328,30 +283,27 @@ try {
 								</ul>
 								<ul class="nav nav-tabs cus-drop-down">
 									<li class="dropdown">
-										<a data-toggle="dropdown" href="#" class="show_ad_grp">Add Ad Group<span class="caret"></span></a> 
+										<a data-toggle="dropdown" href="#" class="show_ad_grp">Add Ad Group<span class="caret"></span>
+									    </a> 
 										<div id="adgrp" style="display:none">
-										<form action ="addadgrp.php" method="get"> 
-											<p>Select a Campaign </p>
-											<select name="c_id">
-											<option value="">Select</option>
-											<?php 
-                                                
-											   $all_campaign = GetCampaigns($user,$adwords_version); 
+											<form action ="addadgrp.php" method="get"> 
+												<p>Select a Campaign </p>
+													<select name="c_id">
+														<option value="">Select</option>
+														<?php 
+			                                               
+														   $all_campaign = GetCampaigns($user,$adwords_version); 
+								   						   foreach($all_campaign as $row){ ?>
+															<option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+															<?php } ?>										
+													</select>
 
-					   						   foreach($all_campaign as $row){ ?>
-												<option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
-												<?php } ?>										
-											</select></br>
-
-											<input type ="submit" name="submit" value="Continue"> 
+													<input type ="submit" name="submit" value="Continue"/> 
 											</form>
 											<form action="adwords_dashboard.php" method="post"> 
-                                             <input type ="submit" name="cancel" value="Cancel"> 
+                                            	 <input type ="submit" name="cancel" value="Cancel"> 
                                              </form>
-											<!--ul role="menu" class="dropdown-menu">
-												<li><a data-toggle="tab" href="#tab4default" class="get_type">Search And Display Networks</a></li>
-												
-											</ul-->
+										
 										</div>
 									</li>
 									<li class="dropdown">
@@ -435,17 +387,9 @@ try {
 
 
 										<?php
-											try {	
-													  $user = new AdWordsUser();
-													  $user->LogAll();	
-													  $GetAdGroup = GetAdGroup($user,$adwords_version); 	
-													  //print_r($$GetAdGroup);
-													 // echo "chikooo";
+										 $GetAdGroup = GetAdGroup($user,$adwords_version); 	
+										
 													  foreach($GetAdGroup as $row){ 
-                                                      // echo $row['campaignId'];
-													  $GetadgrpCampaigns  = GetadgrpCampaigns($user, $adwords_version,$row['campaignId']);
-													  //	print_r($GetadgrpCampaigns);
-                                                           if($GetadgrpCampaigns != "no" ){
 
 													   	?>
 													   	<li>
@@ -453,21 +397,7 @@ try {
 																<input type="checkbox"/>
 															</div>
 															<div class="item-radio" >
-																	<?php  if($row['active']=="ENABLED"){ ?>
-																		<img src="abc.png" class="showstate" id="<?php echo $row['id']  ?>">
-                                                               		<?php }elseif($row['active']=="PAUSED"){ ?>
-                                                               			<img src="paused.png" class="showstate" id="<?php echo $row['id']  ?>">
-                                                               		<?php }elseif($row['active']=="REMOVED"){ ?>
-                                                               			<img src="remove.png" class="showstate" id="<?php echo $row['id']  ?>">
-                                                               		<?php } ?>
-
-                                                               		<ul style="display:none;background:white;border:1px gray solid" class="<?php echo $row['id']; ?>">
-
-                                                           				<li class="stateval" value="enable"><a href="editgrp.php?value=_re&c_id=<?php echo $row['id']; ?>"><img src="abc.png">Enable</a></li>
-                                                           				<li class="stateval" value="pause"><a href="editgrp.php?value=_rp&c_id=<?php echo $row['id']; ?>"><img src="paused.png">Pause</a></li>
-                                                           				<li class="stateval" value="remove"><a href="editgrp.php?value=_rr&c_id=<?php echo $row['id']; ?>"><img src="remove.png">Remove</a></li>
-
-                                                               		</ul>
+																<input type="checkbox"/>	
 																 
 															</div>
 															<div class="item-cam">
@@ -529,260 +459,16 @@ try {
 															
 														</li>				    
 
-													<?php  } }												  
-												}catch(Exception $e) {													 
-												} ?>										
+											<?php  } ?>										
 									</ul>
 								</div>
 							</div>
 							<div id="menu3" class="tab-pane fade">								
-								<ul class="nav nav-tabs">
-									<li class="dropdown">
-										<a data-toggle="dropdown" href="#">All but removed ad groups<span class="caret"></span></a>
-										<ul role="menu" class="dropdown-menu">
-											<li><a data-toggle="tab" href="#tab4default">Default 4</a></li>
-											<li><a data-toggle="tab" href="#tab5default">Default 5</a></li>
-										</ul>
-									</li>
-									<li class="dropdown">
-										<a data-toggle="dropdown" href="#">Segment<span class="caret"></span></a>
-										<ul role="menu" class="dropdown-menu">
-											<li><a data-toggle="tab" href="#tab4default">Default 4</a></li>
-											<li><a data-toggle="tab" href="#tab5default">Default 5</a></li>
-										</ul>
-									</li>
-									<li class="dropdown">
-										<a data-toggle="dropdown" href="#">Filter<span class="caret"></span></a>
-										<ul role="menu" class="dropdown-menu">
-											<li><a data-toggle="tab" href="#tab4default">Default 4</a></li>
-											<li><a data-toggle="tab" href="#tab5default">Default 5</a></li>
-										</ul>
-									</li>
-									<li class="dropdown">
-										<a data-toggle="dropdown" href="#">Columns<span class="caret"></span></a>
-										<ul role="menu" class="dropdown-menu">
-											<li><a data-toggle="tab" href="#tab4default">Default 4</a></li>
-											<li><a data-toggle="tab" href="#tab5default">Default 5</a></li>
-										</ul>
-									</li>
-								</ul>
-								<ul class="nav nav-tabs cus-drop-down">
-									<li class="dropdown">
-										<a data-toggle="dropdown" href="#" class="show_text_ad">Add Text Ads<span class="caret"></span></a> 
-										<div id="textad" style="display:none">
-										<form action ="addtextad.php" method="get"> 
-											<p>Select a Ad Group </p>
-											<select name="c_id">
-											<option value="">Select</option>
-											<?php 
-                                                
-											   $all_adgroup = GetAdGroup($user,$adwords_version); 
-
-					   						   foreach($all_adgroup as $row){
-					   						   	 $GetadgrpCampaigns  = GetadgrpCampaigns($user, $adwords_version,$row['campaignId']);
-													  //	print_r($GetadgrpCampaigns);
-                                                           if($GetadgrpCampaigns != "no" ){
-
-					   						    ?>
-												<option value="<?php echo $row['id']; ?><?php echo "#".$row['name']; ?>"><?php echo $row['name']; ?></option>												
-												<?php } } ?>										
-											</select></br>
-
-											<input type ="submit" name="submit" value="Continue"> 
-											</form>
-											<form action="adwords_dashboard.php" method="post"> 
-                                             <input type ="submit" name="cancel" value="Cancel"> 
-                                             </form>
-											<!--ul role="menu" class="dropdown-menu">
-												<li><a data-toggle="tab" href="#tab4default" class="get_type">Search And Display Networks</a></li>
-												
-											</ul-->
-										</div>
-									</li>
-									<li class="dropdown">
-										<a data-toggle="dropdown" href="#">Edit<span class="caret"></span></a>
-										<ul role="menu" class="dropdown-menu">
-											<li><a data-toggle="tab" href="#tab4default">Default 4</a></li>
-											<li><a data-toggle="tab" href="#tab5default">Default 5</a></li>
-										</ul>
-									</li>
-									<li class="dropdown">
-										<a data-toggle="dropdown" href="#">Details<span class="caret"></span></a>
-										<ul role="menu" class="dropdown-menu">
-											<li><a data-toggle="tab" href="#tab4default">Default 4</a></li>
-											<li><a data-toggle="tab" href="#tab5default">Default 5</a></li>
-										</ul>
-									</li>
-									<li class="dropdown">
-										<a data-toggle="dropdown" href="#">Bid strategy<span class="caret"></span></a>
-										<ul role="menu" class="dropdown-menu">
-											<li><a data-toggle="tab" href="#tab4default">Default 4</a></li>
-											<li><a data-toggle="tab" href="#tab5default">Default 5</a></li>
-										</ul>
-									</li>
-									<li class="dropdown">
-										<a data-toggle="dropdown" href="#">Automate<span class="caret"></span></a>
-										<ul role="menu" class="dropdown-menu">
-											<li><a data-toggle="tab" href="#tab4default">Default 4</a></li>
-											<li><a data-toggle="tab" href="#tab5default">Default 5</a></li>
-										</ul>
-									</li>
-								</ul>
-								<div class="cus-add-items">
-									<ul>
-										<li>
-											<div class="item-checkbox">
-												<input type="checkbox"/>
-											</div>
-											<div class="item-radio">											 
-												<input type="radio" name="button" value="item-radio1">
-											</div>
-											<div class="item-cam">
-												<span>Ad Group</span>
-											</div>
-											<div class="item-budget">
-												<span>Campaign name</span>
-											</div>
-											<div class="item-status">
-												<span>Status</span>
-											</div>
-											<div class="item-lab">
-												<span>Default Max. CPC</span>
-											</div>
-											
-											<div class="item-cam-type">
-												<span>Campaign type</span>
-											</div>
-											<div class="item-cam-sub">
-												<span>Campaign subtype</span>
-											</div>
-											<div class="item-click">
-												<span>Clicks</span>
-											</div>
-											<div class="item-impr">
-												<span>Impr.</span>
-											</div>
-											<div class="item-ctr">
-												<span>CTR</span>
-											</div>
-											<div class="item-avg">
-												<span>Avg. CPC</span>
-											</div>
-											<div class="item-cost">
-												<span>Cost</span>
-											</div>
-											<div class="item-pos">
-												<span>Avg. Pos.</span>
-											</div>
-										
-											
-										</li>
-
-
-										<?php
-											try {	
-													  $user = new AdWordsUser();
-													  $user->LogAll();	
-													  $GetTextAds = GetTextAds($user, $adwords_version);
-													  //print_r($$GetAdGroup);
-													 // echo "chikooo";
-													  foreach($GetTextAds as $row){ 
-                                                    
-
-													   	?>
-													   	<li>
-															<div class="item-checkbox">
-																<input type="checkbox"/>
-															</div>
-															<div class="item-radio" >
-																	<?php  if($row['active']=="ENABLED"){ ?>
-																		<img src="abc.png" class="showstate" id="<?php echo $row['id']  ?>">
-                                                               		<?php }elseif($row['active']=="PAUSED"){ ?>
-                                                               			<img src="paused.png" class="showstate" id="<?php echo $row['id']  ?>">
-                                                               		<?php }elseif($row['active']=="REMOVED"){ ?>
-                                                               			<img src="remove.png" class="showstate" id="<?php echo $row['id']  ?>">
-                                                               		<?php } ?>
-
-                                                               		<ul style="display:none;background:white;border:1px gray solid" class="<?php echo $row['id']; ?>">
-
-                                                           				<li class="stateval" value="enable"><a href="editgrp.php?value=_re&c_id=<?php echo $row['id']; ?>"><img src="abc.png">Enable</a></li>
-                                                           				<li class="stateval" value="pause"><a href="editgrp.php?value=_rp&c_id=<?php echo $row['id']; ?>"><img src="paused.png">Pause</a></li>
-                                                           				<li class="stateval" value="remove"><a href="editgrp.php?value=_rr&c_id=<?php echo $row['id']; ?>"><img src="remove.png">Remove</a></li>
-
-                                                               		</ul>
-																 
-															</div>
-															<div class="item-cam">
-																<span><?php echo $row['headline']; ?><br>
-																<?php echo $row['description1']; ?><br>
-																<?php echo $row['description2']; ?><br>
-																<?php echo $row['displayUrl']; ?><br></span>
-															</div>
-															<div class="item-budget">
-																<span><?php echo $row['campaignName']; ?></span>
-															</div>
-															<div class="item-status"> 
-																<span>				
-																		<?php
-		                                                                if($row['active']=="ENABLED"){
-
-		                                                                  	echo "Eligible"; 
-
-		                                                                }else{
-
-                                                                  		echo $row['active'];
-
-                                                                  	}   ?></span>
-															</div>
-															<div class="item-lab">
-																<span><?php echo "$".($row['cpc']/1000000).".00"; ?></span>
-															</div>
-															<div class="item-cam-type">
-																<span><?php
-
-                                                                  if($row['campaigntype']=="SEARCH"){
-
-                                                                  	echo "Search Network with Display Select";
-
-                                                                  } ?>
-
-																 </span>
-															</div>
-															<div class="item-cam-sub">
-																<span>All Features
-																<?php //echo $row['campaignsubtype']; ?>
-																</span>
-															</div>
-															<div class="item-click">
-																<span>Text</span>
-															</div>
-															<div class="item-impr">
-																<span><?php echo $row['impressions']; ?></span>
-															</div>
-															<div class="item-ctr">
-																<span>Text</span>
-															</div>
-															<div class="item-avg">
-																<span>Text</span>
-															</div>
-															<div class="item-cost">
-																<span>Text</span>
-															</div>
-															<div class="item-pos">
-																<span>Text</span>
-															</div>
-															
-														</li>				    
-
-													<?php  } 
-													/* }		*/										  
-												}catch(Exception $e) {													 
-												} ?>										
-									</ul>
-								</div>
+							<h2>menu3333</h2>
 							</div>
 							<div id="menu4" class="tab-pane fade">
-								<h3>4</h3>
+															
+								<h2>menu4443</h2>
 							</div>
 						</div>
 					</div>
@@ -1647,5 +1333,38 @@ try {
 			</div>
 		</div>
     </div>
-    <?php include('footer.php'); ?>
+    
+	<!-- Tab Jquery Starts -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.main-tab').click(function(){ 
+				$('.main-tab').children("ul.inner-tab").hide();
+				$(this).children("ul.inner-tab").show();
+			});
+
+			$(".showstate").click(function(){
+				var id  = $(this).attr('id');
+				$("."+id).toggle();					
+       		});
+
+       		$(".show_ad_grp").click(function(){
+       				//alert("kfudgdf");
+                    $("#adgrp").toggle();	
+      		});     		
+
+       		$(".show_text_ad").click(function(){
+       				//alert("kfudgdf");
+                    $("#textad").toggle();	
+      		});
+      		$(".show_keywords").click(function(){
+       				//alert("kfudgdf");
+                    $("#keywords").toggle();	
+      		});
+
+
+      		
+		});
+	</script>
+</body>
+</html>
 	
